@@ -27,7 +27,9 @@
         </div>
     </nav>
     <!-- ROUTER VIEW QUE CARGARÁ LAS VISTAS (INICIO, SOBRE MÍ, CONTACTO, ETC.) -->
-    <router-view></router-view>
+    <transition name="mi-transicion">
+      <router-view></router-view>
+    </transition>
   </div>
   
 </template>
@@ -50,5 +52,14 @@ export default {
 }
 #menu-v8 a{
   text-shadow: 1px 1px #000;
+}
+
+.mi-transicion-enter-active {
+ transition: opacity .1s
+}
+
+.mi-transicion-enter, .mi-transicion-leave-to{
+ opacity: 0;
+ padding: 10px;
 }
 </style>

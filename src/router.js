@@ -6,6 +6,9 @@ import Contact from './components/Contact';
 import LastPost from './components/LastPost';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
+import Admin from './components/Admin';
+import AdminSimple from './components/AdminSimple';
+import AdminAvanzado from './components/AdminAvanzado';
 
 
 Vue.use(Router);
@@ -22,11 +25,13 @@ export default new Router({
         {
             path: '/sobremi',
             component: AboutMe,
-            name : 'sobremi'
+            name : 'sobremi',
+            alias: ['/acerca']
         },
         {
             path: '/contacto',
-            component: Contact
+            component: Contact,
+            alias: ['/contactame']
         },
         {
             path: '/post/:id', 
@@ -41,6 +46,32 @@ export default new Router({
         {
             path: '*',
             component: NotFound
-        }
+        },
+        {
+            path: '/administrador',
+            component: Admin,
+            children : [
+                {
+                    path: 'simple',
+                    component: AdminSimple
+                },
+                {
+                    path: 'avanzado',
+                    component: AdminAvanzado
+                }
+            ]
+        },
+        {
+            path: '/home',
+            redirect: '/'
+        },
+        {
+            path: '/inicio',
+            redirect: '/'
+        },
+        {
+            path: '/portada',
+            redirect: '/'
+        },
     ]
 });
