@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Portada from './components/Portada';
-import AboutMe from './components/AboutMe';
-import Contact from './components/Contact';
+const Portada = () => import('./components/Portada');
+const AboutMe = () => import( './components/AboutMe');
+const Contact = () => import( './components/Contact');
 import LastPost from './components/LastPost';
-import Post from './components/Post';
+const Post = () => import ( './components/Post');
 import NotFound from './components/NotFound';
 import Admin from './components/Admin';
 import AdminSimple from './components/AdminSimple';

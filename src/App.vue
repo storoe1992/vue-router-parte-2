@@ -58,8 +58,4 @@ export default {
  transition: opacity .1s
 }
 
-.mi-transicion-enter, .mi-transicion-leave-to{
- opacity: 0;
- padding: 10px;
-}
 </style>
